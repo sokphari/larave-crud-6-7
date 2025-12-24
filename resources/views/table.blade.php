@@ -30,7 +30,7 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-primary">Delete</button>
                     </form>
-                    <button type="submit" class="btn btn-warning">Edit</button>
+                    <a href="{{ route('edit',$item->id) }}" type="submit" class="btn btn-warning">Edit</a>
                 </td>
             </tr> 
             @endforeach
