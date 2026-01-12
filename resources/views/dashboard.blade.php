@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <H1>Dashboard</H1>
+    <h1>Dashboard</h1>
+    <form action="{{ route('logout.post') }}" method="post">
+        @csrf
+        <button type="submit">Logout</button>
+    </form>
 </body>
 </html>

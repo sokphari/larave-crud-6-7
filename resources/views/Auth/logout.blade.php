@@ -7,11 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{ route('login.post') }}" method="post">
+    <form action="" method="post">
         @csrf
-        <input type="email" name="email" id="email">
-        <input type="password" name="password" id="">
-        <button type="submit">Login</button>
+        <button type="submit">Logout</button>
     </form>
 </body>
 </html>

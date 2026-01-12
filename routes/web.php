@@ -23,7 +23,10 @@ Route::get('/', function () {
 Route::get('/register',[AuthController::class,'RegisterForm'])->name('register');
 Route::post('/register',[AuthController::class,'RegisterStore'])->name('register.post');
 
+#route login public
+Route::get('/login',[AuthController::class,'login'])->name('login');
+Route::post('/login',[AuthController::class,'loginStore'])->name('login.post');
 
-
+Route::post('/logout',[AuthController::class,'logout'])->name('logout.post');
 #Route Dashboard
-Route::get('/dashboard',[AuthController::class,'index']);
+Route::get('/dashboard',[AuthController::class,'index'])->middleware('checkauth');
