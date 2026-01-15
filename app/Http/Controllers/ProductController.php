@@ -21,9 +21,9 @@ class ProductController extends Controller
             'price' => 'required',
             'description' => 'required'
         ]);
-        // if($validate->fails()){
-        //     return response()->json(['errorr'=>$validate]);
-        // }
+        if($validate->fails()){
+            return response()->json(['errorr'=>$validate]);
+        }
         $user = Product::create([
             'name' => $request->name,
             'price' => $request->price,
@@ -33,7 +33,16 @@ class ProductController extends Controller
             'message' => "Create Success",
             'data' => $user,
             'status' => 201
-        ]);
+        ],201);
 
     }
+    public function destroy($id){
+        $product = Product::FindOrFail($id);
+        $product->delete();
+        return response()->json([
+            'message' => "Delete Successfully",
+            "data" => $product,
+        ],200);
+    }
+    
 }
