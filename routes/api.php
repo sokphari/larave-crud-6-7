@@ -24,3 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/products',[ProductController::class,'index']);
 Route::post('/product',[ProductController::class,'store']);
 Route::delete('/product/{id}',[ProductController::class,'destroy']);
+Route::get('/products/{id}',[ProductController::class,'edit']);
+Route::put('/products/{id}',[ProductController::class,'update']);
+//fetch and sanctum = base toket , cookie token
+//  and JWT
